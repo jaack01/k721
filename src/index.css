@@ -34,3 +34,24 @@
         transform: translateX(-100%);
     }
 }
+
+.marquee-ribbon-container {
+    will-change: transform;
+}
+
+.marquee-content {
+    will-change: transform;
+}
+
+.marquee-ribbon-container:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}

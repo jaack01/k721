@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import ContactHero from '../components/contact/ContactHero'
 import ContactForm from '../components/contact/ContactForm'
 import ContactInfo from '../components/contact/ContactInfo'
+import MarqueeRibbon from '../components/common/MarqueeRibbon'
 
 const Contact = () => {
   const containerRef = useRef(null)
@@ -39,6 +40,15 @@ const Contact = () => {
   return (
     <div ref={containerRef} className='min-h-screen bg-black text-white overflow-hidden'>
       <ContactHero />
+
+      <MarqueeRibbon
+        text="LET'S WORK TOGETHER"
+        rotation={-3}
+        backgroundColor="bg-white"
+        textColor="text-black"
+        speed={25}
+        className="my-12 md:my-16 lg:my-20"
+      />
 
       <div className='relative z-10'>
         <ContactForm />
