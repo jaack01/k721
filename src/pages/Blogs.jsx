@@ -42,6 +42,8 @@ const Blogs = () => {
             return (
               <div key={idx} className='blog-hero w-full lg:h-[850px] mb-4 flex lg:flex-row flex-col lg:gap-4 gap-2'>
                 <BlogCard
+                  slug1={pair.blog1?.slug}
+                  slug2={pair.blog2?.slug}
                   image1={pair.blog1?.featuredImage}
                   image2={pair.blog2?.featuredImage}
                   title1={pair.blog1?.title}

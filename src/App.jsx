@@ -5,6 +5,7 @@ import Projects from './pages/Projects'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
 import Blogs from './pages/Blogs'
+import BlogDetail from './pages/BlogDetail'
 import Navbar from './components/Navigation/Navbar'
 import FullScreenNav from './components/Navigation/FullScreenNav'
 
@@ -21,6 +22,7 @@ const App = () => {
         <Route path='/services' element={<Services />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/blogs' element={<Blogs />} />
+        <Route path='/blogs/:slug' element={<BlogDetail />} />
       </Routes>
     </div>
   )
