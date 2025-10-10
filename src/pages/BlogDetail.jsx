@@ -13,10 +13,10 @@ const BlogDetail = () => {
 
   if (!blog) {
     return (
-      <div className='min-h-screen bg-black flex items-center justify-center'>
+      <div className='min-h-screen bg-white flex items-center justify-center'>
         <div className='text-center'>
-          <h1 className='font-[font2] text-4xl mb-4 text-white'>Blog Not Found</h1>
-          <Link to='/blogs' className='text-[#D3FD50] underline font-[font1]'>Back to Blogs</Link>
+          <h1 className='font-[font2] text-4xl mb-4'>Blog Not Found</h1>
+          <Link to='/blogs' className='text-black underline font-[font1]'>Back to Blogs</Link>
         </div>
       </div>
     )
@@ -28,38 +28,28 @@ const BlogDetail = () => {
   }
 
   return (
-    <div className='bg-black min-h-screen text-white'>
-      <div className='max-w-5xl mx-auto px-4 lg:px-8 pt-32 pb-20'>
-        <div className='mb-12'>
-          <Link
-            to='/blogs'
-            className='inline-flex items-center text-white hover:text-[#D3FD50] transition-colors font-[font1] text-sm uppercase tracking-wide mb-8'
-          >
-            <svg className='w-4 h-4 mr-2' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-              <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M15 19l-7-7 7-7' />
-            </svg>
-            Back to Blogs
-          </Link>
-
-          <div className='mb-8'>
-            <span className='inline-block bg-[#D3FD50] text-black px-6 py-2 font-[font1] text-sm uppercase tracking-wider mb-6'>
-              {blog.category}
+    <div className='bg-white min-h-screen'>
+      <div className='max-w-[900px] mx-auto px-6 lg:px-12 pt-40 pb-24'>
+        <div className='mb-16'>
+          <div className='mb-6'>
+            <span className='inline-block text-black font-[font1] text-xs uppercase tracking-[0.2em] border border-black px-4 py-2'>
+              [{blog.category}]
             </span>
           </div>
 
-          <h1 className='font-[font2] text-4xl md:text-5xl lg:text-7xl leading-tight mb-8 text-white'>
+          <h1 className='font-[font2] text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-12 text-black'>
             {blog.title}
           </h1>
 
-          <div className='flex items-center gap-6 mb-12 pt-8 border-t border-white/10'>
+          <div className='flex items-center gap-4 mb-16'>
             <img
               src={blog.authorImage}
               alt={blog.author}
-              className='w-16 h-16 lg:w-20 lg:h-20 rounded-full object-cover'
+              className='w-12 h-12 rounded-full object-cover'
             />
             <div>
-              <p className='font-[font2] text-xl text-white mb-1'>{blog.author}</p>
-              <div className='flex items-center gap-4 text-sm font-[font1] text-white/60'>
+              <p className='font-[font1] text-sm text-black'>{blog.author}</p>
+              <div className='flex items-center gap-3 text-xs font-[font1] text-black/60'>
                 <span>{formatDate(blog.publishedDate)}</span>
                 <span>•</span>
                 <span>{blog.readTime} read</span>
@@ -72,18 +62,18 @@ const BlogDetail = () => {
           <img
             src={blog.featuredImage}
             alt={blog.title}
-            className='w-full h-[400px] lg:h-[600px] object-cover'
+            className='w-full aspect-video object-cover'
           />
         </div>
 
-        <article className='max-w-3xl'>
+        <article className='max-w-[650px] mx-auto'>
           {blog.content.map((block, index) => {
             switch (block.type) {
               case 'heading':
                 return (
                   <h2
                     key={index}
-                    className='font-[font2] text-3xl lg:text-4xl text-white mt-16 mb-8 leading-tight'
+                    className='font-[font2] text-3xl lg:text-4xl text-black mt-16 mb-6 leading-[1.2]'
                   >
                     {block.text}
                   </h2>
@@ -92,7 +82,7 @@ const BlogDetail = () => {
                 return (
                   <p
                     key={index}
-                    className='font-[font1] text-base lg:text-lg text-white/80 leading-relaxed mb-8'
+                    className='font-[font1] text-[17px] lg:text-[18px] text-black leading-[1.7] mb-6'
                   >
                     {block.text}
                   </p>
@@ -101,9 +91,9 @@ const BlogDetail = () => {
                 return (
                   <blockquote
                     key={index}
-                    className='border-l-4 border-[#D3FD50] pl-8 py-6 my-12'
+                    className='border-l-[3px] border-[#D3FD50] pl-8 py-2 my-12'
                   >
-                    <p className='font-[font2] text-2xl lg:text-3xl text-white italic leading-relaxed'>
+                    <p className='font-[font1] text-xl lg:text-2xl text-black leading-[1.5]'>
                       {block.text}
                     </p>
                   </blockquote>
@@ -114,9 +104,18 @@ const BlogDetail = () => {
           })}
         </article>
 
-        <div className='mt-24 pt-16 border-t border-white/10'>
-          <h3 className='font-[font2] text-3xl lg:text-4xl mb-12 text-white'>More Articles</h3>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12'>
+        <div className='mt-32 pt-12'>
+          <Link
+            to='/blogs'
+            className='inline-block text-black font-[font1] text-sm uppercase tracking-[0.2em] border border-black px-8 py-4 hover:bg-[#D3FD50] hover:border-[#D3FD50] transition-colors duration-300'
+          >
+            Back to All Articles
+          </Link>
+        </div>
+
+        <div className='mt-32 pt-16 border-t border-black/10'>
+          <h3 className='font-[font2] text-3xl lg:text-5xl mb-16 text-black'>More Articles</h3>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16'>
             {blogPosts
               .filter(post => post.id !== blog.id)
               .slice(0, 2)
@@ -130,18 +129,15 @@ const BlogDetail = () => {
                     <img
                       src={post.featuredImage}
                       alt={post.title}
-                      className='w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700'
+                      className='w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700'
                     />
                   </div>
-                  <p className='text-sm font-[font1] text-[#D3FD50] mb-3 uppercase tracking-wider'>
-                    {post.category}
+                  <p className='text-xs font-[font1] text-black/60 mb-3 uppercase tracking-[0.2em]'>
+                    {formatDate(post.publishedDate)}
                   </p>
-                  <h4 className='font-[font2] text-2xl text-white group-hover:text-[#D3FD50] transition-colors leading-tight'>
+                  <h4 className='font-[font2] text-2xl lg:text-3xl text-black group-hover:opacity-60 transition-opacity leading-[1.2]'>
                     {post.title}
                   </h4>
-                  <p className='font-[font1] text-white/60 mt-3 text-sm'>
-                    {post.readTime} read
-                  </p>
                 </Link>
               ))}
           </div>
