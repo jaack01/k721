@@ -19,11 +19,22 @@
 
 .moveLink{
     opacity: 0;
-    transition: all ease 0.3s;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link:hover .moveLink{
     opacity: 1;
+}
+
+.link {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link:hover {
+    transform: scale(1.01);
 }
 
 @keyframes moveAnimation {
@@ -54,4 +65,13 @@
     100% {
         transform: translate3d(-50%, 0, 0);
     }
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: font1, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
