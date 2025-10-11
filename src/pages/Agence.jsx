@@ -29,18 +29,18 @@ const Agence = () => {
   ]
 
   useGSAP(function () {
+    const isMobile = window.innerWidth < 1024
 
     gsap.to(imageDivRef.current, {
       scrollTrigger: {
         trigger: imageDivRef.current,
-        // markers: true,
-        start: 'top 28%',
-        end: 'top -70%',
-        pin: true,
-        pinSpacing: true,
-        pinReparent: true,
+        start: isMobile ? 'top 50%' : 'top 28%',
+        end: isMobile ? 'top -50%' : 'top -70%',
+        pin: !isMobile,
+        pinSpacing: !isMobile,
+        pinReparent: !isMobile,
         pinType: 'transform',
-        scrub: 1, // smooth scrubbing with 1s easing
+        scrub: 1,
         anticipatePin: 1,
         invalidateOnRefresh: true,
         onUpdate: (elem) => {
@@ -50,7 +50,9 @@ const Agence = () => {
           } else {
             imageIndex = imageArray.length - 1
           }
-          imageRef.current.src = imageArray[imageIndex]
+          if (imageRef.current) {
+            imageRef.current.src = imageArray[imageIndex]
+          }
         }
       }
     })
@@ -59,22 +61,22 @@ const Agence = () => {
 
   return (
     <>
-    <div className='parent'>
-      <div id='page1' className='py-1 '>
-        <div ref={imageDivRef} className='absolute overflow-hidden lg:h-[20vw] h-[30vw] lg:rounded-3xl rounded-xl lg:w-[15vw] w-[25vw] lg:top-96 -top-80 lg:left-[30vw] left-[30vw]'>
-          <img ref={imageRef} className='h-full object-cover w-full' src="https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg" alt="" />
+    <div className='parent relative'>
+      <div id='page1' className='py-1 px-3 lg:px-0'>
+        <div ref={imageDivRef} className='absolute overflow-hidden lg:h-[20vw] h-[35vw] md:h-[28vw] lg:rounded-3xl rounded-xl lg:w-[15vw] w-[30vw] md:w-[25vw] top-32 md:top-48 lg:top-96 left-[35%] md:left-[38%] lg:left-[30vw] z-10'>
+          <img ref={imageRef} className='h-full object-cover w-full' src="https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg" alt="Team member" loading="lazy" />
         </div>
         <div className='relative font-[font2]'>
-          <div className='lg:mt-[55vh] mt-[30vh]'>
-            <h1 className='text-[20vw] text-center uppercase leading-[18vw]'>Soixan7e <br />
+          <div className='pt-24 md:pt-32 lg:mt-[55vh]'>
+            <h1 className='text-[18vw] md:text-[16vw] lg:text-[20vw] text-center uppercase leading-[16vw] md:leading-[14vw] lg:leading-[18vw] px-3'>Soixan7e <br />
               Douze</h1>
           </div>
-          <div className='lg:pl-[40%] lg:mt-20 mt-4 p-3'>
-            <p className='lg:text-6xl text-xl leading-tight'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Notre curiosité nourrit notre créativité. On reste humbles et on dit non aux gros egos, même le vôtre. Une marque est vivante. Elle a des valeurs, une personnalité, une histoire. Si on oublie ça, on peut faire de bons chiffres à court terme, mais on la tue à long terme. C’est pour ça qu’on s’engage à donner de la perspective, pour bâtir des marques influentes.</p>
+          <div className='lg:pl-[40%] mt-8 md:mt-12 lg:mt-20 px-4 lg:px-0 lg:pr-8'>
+            <p className='text-base md:text-2xl lg:text-6xl leading-relaxed md:leading-tight lg:leading-tight'>Notre curiosité nourrit notre créativité. On reste humbles et on dit non aux gros egos, même le vôtre. Une marque est vivante. Elle a des valeurs, une personnalité, une histoire. Si on oublie ça, on peut faire de bons chiffres à court terme, mais on la tue à long terme. C'est pour ça qu'on s'engage à donner de la perspective, pour bâtir des marques influentes.</p>
           </div>
         </div>
       </div>
-      <div id='page2' className=" h-screen">
+      <div id='page2' className='h-[50vh] md:h-[75vh] lg:h-screen'>
 
       </div>
     </div>
