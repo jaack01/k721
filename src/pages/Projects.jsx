@@ -3,20 +3,10 @@ import ProjectCard from '../components/projects/ProjectCard'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import Footer from '../components/common/Footer'
+import { projectsData } from '../data/project-data'
 
 
 const Projects = () => {
-
-  const projects = [{
-    image1: 'https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_1280x960-1280x960.jpg',
-    image2: 'https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---Thumbnail-1280x960.jpg'
-  }, {
-    image1: 'https://k72.ca/uploads/caseStudies/OKA/OKA_thumbnail-1280x960.jpg',
-    image2: 'https://k72.ca/uploads/caseStudies/Opto/thumbnailimage_opto-1280x960.jpg'
-  }, {
-    image1: 'https://k72.ca/uploads/caseStudies/LAMAJEURE_-_Son_sur_mesure/chalaxeur-thumbnail_img-1280x960.jpg',
-    image2: 'https://k72.ca/uploads/caseStudies/SHELTON/thumbnailimage_shelton-1280x960.jpg'
-  }]
 
 
   gsap.registerPlugin(ScrollTrigger)
@@ -60,10 +50,10 @@ const Projects = () => {
         <div className='pt-24 md:pt-32 lg:pt-[45vh]'>
           <h2 className='font-[font2] text-[15vw] md:text-[12vw] lg:text-[9.5vw] uppercase leading-tight'>Projets</h2>
         </div>
-        <div className='mt-8 md:mt-12 lg:mt-20 lol'>
-          {projects.map(function (elem, idx) {
-            return <div key={idx} className='hero w-full min-h-[400px] md:min-h-[600px] lg:h-[850px] mb-3 md:mb-4 flex lg:flex-row flex-col lg:gap-4 gap-3'>
-              <ProjectCard image1={elem.image1} image2={elem.image2} />
+        <div className='mt-8 md:mt-12 lg:mt-20 lol grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-4'>
+          {projectsData.map(function (project) {
+            return <div key={project.id} className='hero w-full min-h-[400px] md:min-h-[600px] lg:h-[850px]'>
+              <ProjectCard project={project} />
             </div>
           })}
 
