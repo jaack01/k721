@@ -123,7 +123,7 @@ const FullScreenNav = () => {
 
                     </Link>
                     <Link to='/agence' onClick={() => setNavOpen(false)} className='link origin-top relative border-t-1 border-white block cursor-pointer touch-manipulation active:opacity-70'>
-                        <h1 className='font-[font2] text-3xl md:text-4xl lg:text-[6vw] text-center lg:leading-[0.8] py-4 lg:py-6 uppercase'>Agence</h1>
+                        <h1 className='font-[font2] text-3xl md:text-4xl lg:text-[6vw] text-center lg:leading-[0.8] py-4 lg:py-6 uppercase'>Agency</h1>
                         <div className='moveLink absolute text-black flex top-0 bg-[#D3FD50]'>
                             <div className='moveX flex items-center'>
                                 <h2 className='whitespace-nowrap font-[font2] lg:text-[6vw] text-4xl text-center lg:leading-[0.8] lg:py-6 py-2 uppercase'>Pour Tout voir</h2>
