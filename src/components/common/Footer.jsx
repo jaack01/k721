@@ -8,7 +8,7 @@ const Footer = () => {
         <div className='bg-[#d4ff00] text-black p-8 md:p-12 lg:p-16 mb-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-6'>
           <div>
             <h2 className='font-[font2] text-3xl md:text-4xl lg:text-5xl mb-2 uppercase tracking-tight'>
-              BONJOUR@K72.CA
+              AD CYBERTECH
             </h2>
             <p className='font-[font1] text-base md:text-lg'>
               Let's create something amazing together
@@ -29,8 +29,8 @@ const Footer = () => {
             </h3>
             <div className='font-[font1] text-sm md:text-base leading-relaxed text-gray-400'>
               <p>525 Av. Viger O - Suite 400</p>
-              <p>Montréal, QC H2Z 1G6</p>
-              <p>Canada</p>
+              <p>Nakaha no.1 Gorakhpur</p>
+              <p>India</p>
             </div>
           </div>
 
@@ -40,16 +40,16 @@ const Footer = () => {
             </h3>
             <div className='font-[font1] text-sm md:text-base leading-relaxed text-gray-400'>
               <a
-                href='mailto:bonjour@k72.ca'
+                href='hi@adcybertech.com'
                 className='block hover:text-white transition-colors duration-300 mb-2'
               >
-                bonjour@k72.ca
+                AD Cybertech
               </a>
               <a
                 href='tel:+15145551234'
                 className='block hover:text-white transition-colors duration-300'
               >
-                +1 (514) 555-1234
+                9205099252
               </a>
             </div>
           </div>
