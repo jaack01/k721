@@ -15,10 +15,10 @@ const HomeBottomText = () => {
           <span className='text-5xl md:text-[5vw] lg:text-[6vw] lg:mt-6'>Projects</span>
         </Link>
         <Link
-          to='/agence'
+          to='/agency'
           className='w-full md:w-auto lg:border-3 border-2 hover:border-[#D3FD50] active:border-[#D3FD50] hover:text-[#D3FD50] active:text-[#D3FD50] transition-colors duration-300 h-20 md:h-28 lg:h-44 flex items-center justify-center px-6 md:px-8 lg:px-14 border-white rounded-full uppercase touch-manipulation'
         >
-          <span className='text-5xl md:text-[5vw] lg:text-[6vw] lg:mt-6'>agence</span>
+          <span className='text-5xl md:text-[5vw] lg:text-[6vw] lg:mt-6'>agency</span>
         </Link>
       </div>
     </div>
