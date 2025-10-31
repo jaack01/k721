@@ -166,11 +166,11 @@ const FullScreenNav = () => {
                         onClick={() => {
                             setNavOpen(false)
                         }}
-                        className='lg:h-20 h-16 w-16 lg:w-20 min-w-[64px] min-h-[64px] relative cursor-pointer touch-manipulation'
+                        className='lg:h-20 h-16 w-16 lg:w-20 min-w-[64px] min-h-[64px] relative cursor-pointer touch-manipulation flex items-center justify-center'
                         aria-label='Close navigation menu'
                     >
-                        <div className='lg:h-28 h-20 lg:w-1 w-0.5 -rotate-45 origin-top absolute bg-[#D3FD50]'></div>
-                        <div className='lg:h-28 h-20 lg:w-1 w-0.5 right-0 rotate-45 origin-top absolute bg-[#D3FD50]'></div>
+                        <div className='absolute lg:h-16 h-12 lg:w-1 w-0.5 -rotate-45 bg-[#D3FD50]'></div>
+                        <div className='absolute lg:h-16 h-12 lg:w-1 w-0.5 rotate-45 bg-[#D3FD50]'></div>
                     </button>
                 </div>
                 <div className='lg:py-12 py-8 px-3 lg:px-0'>
