@@ -1,10 +1,5 @@
 export const navigationItems = [
   {
-    link: '/',
-    text: 'Home',
-    image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600'
-  },
-  {
     link: '/projects',
     text: 'Projects',
     image: 'https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=600'
