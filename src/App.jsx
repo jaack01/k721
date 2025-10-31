@@ -7,6 +7,7 @@ import Services from './pages/Services'
 import Contact from './pages/Contact'
 import Blogs from './pages/Blogs'
 import BlogDetail from './pages/BlogDetail'
+import Navbar from './components/Navigation/Navbar'
 import FlowingMenu from './components/Navigation/FlowingMenu'
 import { navigationItems } from './data/navigation-data'
 
@@ -14,6 +15,7 @@ import { navigationItems } from './data/navigation-data'
 const App = () => {
   return (
     <div className='overflow-x-hidden'>
+      <Navbar />
       <FlowingMenu items={navigationItems} />
       <Routes>
         <Route path='/' element={<Home />} />

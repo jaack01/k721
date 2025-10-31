@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { gsap } from 'gsap';
 import { Link } from 'react-router-dom';
+import { NavbarContext } from '../../context/NavContext';
 
 function FlowingMenu({ items = [] }) {
+  const [navOpen, setNavOpen] = useContext(NavbarContext);
+
+  if (!navOpen) return null;
+
   return (
-    <div className="w-full h-screen fixed top-0 left-0 z-50 overflow-hidden">
+    <div className="w-full h-screen fixed top-0 left-0 z-[100] overflow-hidden bg-black">
+      <div className="absolute top-0 right-0 z-[110] lg:p-5 p-3">
+        <button
+          onClick={() => setNavOpen(false)}
+          className='lg:h-20 h-16 w-16 lg:w-20 min-w-[64px] min-h-[64px] relative cursor-pointer touch-manipulation'
+          aria-label='Close navigation menu'
+        >
+          <div className='lg:h-28 h-20 lg:w-1 w-0.5 -rotate-45 origin-top absolute bg-[#D3FD50]'></div>
+          <div className='lg:h-28 h-20 lg:w-1 w-0.5 right-0 rotate-45 origin-top absolute bg-[#D3FD50]'></div>
+        </button>
+      </div>
       <nav className="flex flex-col h-full m-0 p-0">
         {items.map((item, idx) => (
           <MenuItem key={idx} {...item} />
@@ -18,6 +33,7 @@ function MenuItem({ link, text, image }) {
   const itemRef = React.useRef(null);
   const marqueeRef = React.useRef(null);
   const marqueeInnerRef = React.useRef(null);
+  const [, setNavOpen] = useContext(NavbarContext);
 
   const animationDefaults = { duration: 0.6, ease: 'expo' };
 
@@ -50,6 +66,10 @@ function MenuItem({ link, text, image }) {
       .to(marqueeInnerRef.current, { y: edge === 'top' ? '101%' : '-101%' });
   };
 
+  const handleClick = () => {
+    setNavOpen(false);
+  };
+
   const repeatedMarqueeContent = Array.from({ length: 4 }).map((_, idx) => (
     <React.Fragment key={idx}>
       <span className="text-[#060010] uppercase font-normal text-[4vh] leading-[1.2] p-[1vh_1vw_0]">{text}</span>
@@ -65,6 +85,7 @@ function MenuItem({ link, text, image }) {
       <Link
         className="flex items-center justify-center h-full relative cursor-pointer uppercase no-underline font-semibold text-white text-[4vh] hover:text-[#060010] focus:text-white focus-visible:text-[#060010]"
         to={link}
+        onClick={handleClick}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
