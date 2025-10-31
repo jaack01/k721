@@ -51,11 +51,11 @@ const FlowingMenuItem = ({ link, text, onClose, isLast }) => {
         >
             <h1 className='font-[font2] text-3xl md:text-4xl lg:text-[6vw] text-center lg:leading-[0.8] py-4 lg:py-6 uppercase'>{text}</h1>
             <div
-                className='moveLink absolute inset-0 text-black bg-[#D3FD50] overflow-hidden flex items-center'
+                className='moveLink absolute inset-0 text-black bg-[#D3FD50] overflow-hidden'
                 ref={marqueeRef}
                 style={{ transform: 'translateY(101%)' }}
             >
-                <div className='flex' ref={marqueeInnerRef} style={{ transform: 'translateY(-101%)' }}>
+                <div className='flex h-full py-4 lg:py-6' ref={marqueeInnerRef} style={{ transform: 'translateY(-101%)' }}>
                     <div className='moveX flex items-center gap-4 lg:gap-6'>
                         <h2 className='whitespace-nowrap font-[font2] text-3xl md:text-4xl lg:text-[6vw] lg:leading-[0.8] uppercase'>Pour Tout voir</h2>
                         <img className='lg:h-16 h-12 rounded-full shrink-0 lg:w-32 w-24 object-cover' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
