@@ -51,22 +51,22 @@ const FlowingMenuItem = ({ link, text, onClose, isLast }) => {
         >
             <h1 className='font-[font2] text-3xl md:text-4xl lg:text-[6vw] text-center lg:leading-[0.8] py-4 lg:py-6 uppercase'>{text}</h1>
             <div
-                className='moveLink absolute text-black flex top-0 bg-[#D3FD50] w-full h-full'
+                className='moveLink absolute text-black flex top-0 bg-[#D3FD50] w-full h-full overflow-hidden'
                 ref={marqueeRef}
                 style={{ transform: 'translateY(101%)' }}
             >
-                <div className='flex h-full' ref={marqueeInnerRef} style={{ transform: 'translateY(-101%)' }}>
-                    <div className='moveX flex items-center'>
-                        <h2 className='whitespace-nowrap font-[font2] lg:text-[6vw] text-4xl text-center lg:leading-[0.8] lg:py-6 py-2 uppercase'>Pour Tout voir</h2>
-                        <img className='lg:h-28 h-12 rounded-full shrink-0 lg:w-72 w-28 object-cover' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
-                        <h2 className='whitespace-nowrap font-[font2] lg:text-[6vw] text-4xl text-center lg:leading-[0.8] lg:py-6 py-2 uppercase'>Pour Tout voir</h2>
-                        <img className='lg:h-28 h-12 rounded-full shrink-0 lg:w-72 w-28 object-cover' src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" alt="" />
+                <div className='flex h-full items-center' ref={marqueeInnerRef} style={{ transform: 'translateY(-101%)' }}>
+                    <div className='moveX flex items-center h-full'>
+                        <h2 className='whitespace-nowrap font-[font2] text-3xl md:text-4xl lg:text-[6vw] lg:leading-[0.8] uppercase px-4'>Pour Tout voir</h2>
+                        <img className='lg:h-20 h-10 rounded-full shrink-0 lg:w-40 w-20 object-cover mx-4' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
+                        <h2 className='whitespace-nowrap font-[font2] text-3xl md:text-4xl lg:text-[6vw] lg:leading-[0.8] uppercase px-4'>Pour Tout voir</h2>
+                        <img className='lg:h-20 h-10 rounded-full shrink-0 lg:w-40 w-20 object-cover mx-4' src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" alt="" />
                     </div>
-                    <div className='moveX flex items-center'>
-                        <h2 className='whitespace-nowrap font-[font2] lg:text-[6vw] text-4xl text-center lg:leading-[0.8] lg:py-6 py-2 uppercase'>Pour Tout voir</h2>
-                        <img className='lg:h-28 h-12 rounded-full shrink-0 lg:w-72 w-28 object-cover' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
-                        <h2 className='whitespace-nowrap font-[font2] lg:text-[6vw] text-4xl text-center lg:leading-[0.8] lg:py-6 py-2 uppercase'>Pour Tout voir</h2>
-                        <img className='lg:h-28 h-12 rounded-full shrink-0 lg:w-72 w-28 object-cover' src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" alt="" />
+                    <div className='moveX flex items-center h-full'>
+                        <h2 className='whitespace-nowrap font-[font2] text-3xl md:text-4xl lg:text-[6vw] lg:leading-[0.8] uppercase px-4'>Pour Tout voir</h2>
+                        <img className='lg:h-20 h-10 rounded-full shrink-0 lg:w-40 w-20 object-cover mx-4' src="https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---MenuThumbnail-640x290.jpg" alt="" />
+                        <h2 className='whitespace-nowrap font-[font2] text-3xl md:text-4xl lg:text-[6vw] lg:leading-[0.8] uppercase px-4'>Pour Tout voir</h2>
+                        <img className='lg:h-20 h-10 rounded-full shrink-0 lg:w-40 w-20 object-cover mx-4' src="https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290-640x290.jpg" alt="" />
                     </div>
                 </div>
             </div>
