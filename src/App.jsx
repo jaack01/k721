@@ -8,15 +8,14 @@ import Contact from './pages/Contact'
 import Blogs from './pages/Blogs'
 import BlogDetail from './pages/BlogDetail'
 import Navbar from './components/Navigation/Navbar'
-import FlowingMenu from './components/Navigation/FlowingMenu'
-import { navigationItems } from './data/navigation-data'
+import FullScreenNav from './components/Navigation/FullScreenNav'
 
 
 const App = () => {
   return (
     <div className='overflow-x-hidden'>
       <Navbar />
-      <FlowingMenu items={navigationItems} />
+      <FullScreenNav />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/agence' element={<Agence />} />
