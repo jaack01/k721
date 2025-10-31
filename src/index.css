@@ -55,3 +55,22 @@
         transform: translate3d(-50%, 0, 0);
     }
 }
+
+@keyframes marquee {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@layer utilities {
+    .translate-y-full {
+        transform: translateY(101%);
+    }
+
+    .animate-marquee {
+        animation: marquee 15s linear infinite;
+    }
+}
