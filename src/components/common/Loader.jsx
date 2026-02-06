@@ -1,8 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 
-const Loader = ({ onComplete }) => {
+const Loader = () => {
   const [counter, setCounter] = useState(0)
+  const wrapperRef = useRef(null)
+  const counterRef = useRef(null)
+  const barsRef = useRef([])
+  const hasExited = useRef(false)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -20,21 +24,19 @@ const Loader = ({ onComplete }) => {
   }, [])
 
   useEffect(() => {
-    if (counter === 100) {
-      const tl = gsap.timeline({
-        onComplete: () => {
-          if (onComplete) onComplete()
-        }
-      })
+    if (counter === 100 && !hasExited.current) {
+      hasExited.current = true
 
-      tl.to('.loader-counter', {
+      const tl = gsap.timeline()
+
+      tl.to(counterRef.current, {
         opacity: 0,
         y: -30,
         duration: 0.4,
         ease: 'power2.in'
       })
 
-      tl.to('.loader-bar', {
+      tl.to(barsRef.current, {
         scaleY: 0,
         transformOrigin: 'top',
         stagger: { amount: 0.3 },
@@ -42,23 +44,25 @@ const Loader = ({ onComplete }) => {
         ease: 'power3.inOut'
       }, '-=0.1')
 
-      tl.to('.loader-wrapper', {
-        display: 'none',
+      tl.to(wrapperRef.current, {
+        autoAlpha: 0,
         duration: 0
       })
     }
-  }, [counter, onComplete])
+  }, [counter])
 
   return (
-    <div className='loader-wrapper fixed inset-0 z-[200] flex items-center justify-center'>
+    <div ref={wrapperRef} className='fixed inset-0 z-[200] flex items-center justify-center pointer-events-auto'>
       <div className='absolute inset-0 flex'>
-        <div className='loader-bar flex-1 bg-black origin-top'></div>
-        <div className='loader-bar flex-1 bg-black origin-top'></div>
-        <div className='loader-bar flex-1 bg-black origin-top'></div>
-        <div className='loader-bar flex-1 bg-black origin-top'></div>
-        <div className='loader-bar flex-1 bg-black origin-top'></div>
+        {[0, 1, 2, 3, 4].map(i => (
+          <div
+            key={i}
+            ref={el => { barsRef.current[i] = el }}
+            className='flex-1 bg-black origin-top'
+          />
+        ))}
       </div>
-      <div className='loader-counter relative z-10 text-white font-[font2] flex flex-col items-center'>
+      <div ref={counterRef} className='relative z-10 text-white font-[font2] flex flex-col items-center'>
         <div className='text-[20vw] md:text-[15vw] lg:text-[10vw] leading-none tabular-nums'>
           {counter}
         </div>
