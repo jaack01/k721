@@ -7,8 +7,11 @@ import Services from './pages/Services'
 import Contact from './pages/Contact'
 import Blogs from './pages/Blogs'
 import BlogDetail from './pages/BlogDetail'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import NotFound from './pages/NotFound'
 import Navbar from './components/Navigation/Navbar'
 import FullScreenNav from './components/Navigation/FullScreenNav'
+import QuickNav from './components/Navigation/QuickNav'
 
 
 const App = () => {
@@ -16,6 +19,7 @@ const App = () => {
     <div className='overflow-x-hidden'>
       <Navbar />
       <FullScreenNav />
+      <QuickNav />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/agence' element={<Agence />} />
@@ -25,6 +29,8 @@ const App = () => {
         <Route path='/contact' element={<Contact />} />
         <Route path='/blogs' element={<Blogs />} />
         <Route path='/blogs/:slug' element={<BlogDetail />} />
+        <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
   )

@@ -55,3 +55,12 @@
         transform: translate3d(-50%, 0, 0);
     }
 }
+
+@keyframes loaderPulse {
+    from {
+        height: 8px;
+    }
+    to {
+        height: 24px;
+    }
+}

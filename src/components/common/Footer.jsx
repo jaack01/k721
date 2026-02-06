@@ -1,5 +1,5 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
+import MontrealClock from './MontrealClock'
 
 const Footer = () => {
   return (
@@ -18,18 +18,18 @@ const Footer = () => {
             href='mailto:bonjour@k72.ca'
             className='font-[font2] text-base md:text-lg uppercase tracking-wide flex items-center gap-2 hover:gap-4 transition-all duration-300'
           >
-            EMAIL <span>→</span>
+            EMAIL <span>&rarr;</span>
           </a>
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-16'>
+        <div className='grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-16'>
           <div>
             <h3 className='font-[font2] text-lg md:text-xl uppercase mb-4 tracking-wide'>
               LOCATION
             </h3>
             <div className='font-[font1] text-sm md:text-base leading-relaxed text-gray-400'>
               <p>525 Av. Viger O - Suite 400</p>
-              <p>Montréal, QC H2Z 1G6</p>
+              <p>Montreal, QC H2Z 1G6</p>
               <p>Canada</p>
             </div>
           </div>
@@ -59,46 +59,32 @@ const Footer = () => {
               FOLLOW US
             </h3>
             <div className='font-[font1] text-sm md:text-base leading-relaxed text-gray-400'>
-              <a
-                href='https://instagram.com'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='block hover:text-white transition-colors duration-300 mb-2'
-              >
-                Instagram
-              </a>
-              <a
-                href='https://linkedin.com'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='block hover:text-white transition-colors duration-300 mb-2'
-              >
-                LinkedIn
-              </a>
-              <a
-                href='https://behance.net'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='block hover:text-white transition-colors duration-300 mb-2'
-              >
-                Behance
-              </a>
-              <a
-                href='https://facebook.com'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='block hover:text-white transition-colors duration-300'
-              >
-                Facebook
-              </a>
+              <a href='https://instagram.com' target='_blank' rel='noopener noreferrer' className='block hover:text-white transition-colors duration-300 mb-2'>Instagram</a>
+              <a href='https://linkedin.com' target='_blank' rel='noopener noreferrer' className='block hover:text-white transition-colors duration-300 mb-2'>LinkedIn</a>
+              <a href='https://behance.net' target='_blank' rel='noopener noreferrer' className='block hover:text-white transition-colors duration-300 mb-2'>Behance</a>
+              <a href='https://facebook.com' target='_blank' rel='noopener noreferrer' className='block hover:text-white transition-colors duration-300'>Facebook</a>
+            </div>
+          </div>
+
+          <div>
+            <h3 className='font-[font2] text-lg md:text-xl uppercase mb-4 tracking-wide'>
+              LEGAL
+            </h3>
+            <div className='font-[font1] text-sm md:text-base leading-relaxed text-gray-400'>
+              <Link to='/privacy-policy' className='block hover:text-white transition-colors duration-300 mb-2'>
+                Politique de confidentialite
+              </Link>
             </div>
           </div>
         </div>
 
-        <div className='border-t border-gray-800 pt-8 text-center'>
+        <div className='border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4'>
           <p className='font-[font1] text-sm text-gray-500'>
-            © 2025 K72. All rights reserved.
+            &copy; {new Date().getFullYear()} K72. All rights reserved.
           </p>
+          <div className='text-gray-500'>
+            <MontrealClock />
+          </div>
         </div>
       </div>
     </footer>
